@@ -1,4 +1,4 @@
-const BACKEND_URL = 'http://localhost:5000/api';
+const BACKEND_URL = 'https://mb-gym.onrender.com/api/login';
 let deleteCallback = null;
 
 // View switcher to handle application visibility layout states
