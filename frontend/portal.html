@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portals - MB GYM</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-zinc-950 text-gray-100 font-sans min-h-screen flex flex-col justify-between">
+
+    <div class="p-6 max-w-7xl mx-auto w-full flex justify-between items-center border-b border-zinc-900">
+        <a href="index.html" class="text-2xl font-black tracking-wider text-yellow-400">← MB <span class="text-white">GYM</span></a>
+        <div id="portal-nav-links" class="space-x-4">
+            <button onclick="switchView('member-login')" class="text-sm font-bold text-zinc-400 hover:text-white transition">Member Portal</button>
+            <button onclick="switchView('admin-login')" class="text-sm font-bold text-zinc-400 hover:text-white transition">Admin Portal</button>
+        </div>
+    </div>
+
+    <main class="flex-grow flex items-center justify-center px-4 py-8">
+        
+        <div id="auth-container" class="w-full max-w-md bg-zinc-900 border border-zinc-800 p-8 rounded-2xl shadow-2xl relative">
+            <div id="alert-box" class="hidden mb-4 p-3 rounded text-sm text-center font-bold"></div>
+
+            <div id="member-login-section">
+                <h2 class="text-2xl font-black text-white mb-1">MEMBER <span class="text-yellow-400">LOGIN</span></h2>
+                <p class="text-xs text-zinc-400 mb-6">Access your metrics scorecard and current tier subscription data metrics.</p>
+                <form onsubmit="handleMemberLogin(event)" class="space-y-4">
+                    <div>
+                        <label class="block text-xs font-bold text-zinc-400 uppercase tracking-wider mb-2">Mobile Number (Username)</label>
+                        <input type="text" id="member-user" placeholder="Enter mobile number" required class="w-full bg-zinc-950 border border-zinc-800 rounded px-4 py-2.5 text-white focus:outline-none focus:border-yellow-400 font-mono">
+                    </div>
+                    <div>
+                        <label class="block text-xs font-bold text-zinc-400 uppercase tracking-wider mb-2">Password</label>
+                        <input type="password" id="member-pass" placeholder="••••••••" required class="w-full bg-zinc-950 border border-zinc-800 rounded px-4 py-2.5 text-white focus:outline-none focus:border-yellow-400">
+                    </div>
+                    <button type="submit" class="w-full bg-yellow-400 hover:bg-yellow-500 text-black font-black py-3 rounded tracking-wide transition">SIGN IN</button>
+                </form>
+                <div class="mt-6 pt-4 border-t border-zinc-800 text-center text-sm">New here? <button onclick="switchView('register')" class="text-yellow-400 font-bold hover:underline ml-1">Join Us</button></div>
+            </div>
+
+            <div id="register-section" class="hidden">
+                <h2 class="text-2xl font-black text-yellow-400 mb-1">JOIN <span class="text-white">MB GYM</span></h2>
+                <p class="text-xs text-zinc-400 mb-4">Complete structural biological attributes matrix parameters below.</p>
+                <form onsubmit="handleRegistration(event)" class="space-y-3">
+                    <div class="grid grid-cols-2 gap-2">
+                        <div>
+                            <label class="block text-[10px] font-bold text-zinc-400 uppercase mb-0.5">First Name</label>
+                            <input type="text" id="reg-first" required class="w-full bg-zinc-950 border border-zinc-800 rounded px-3 py-1.5 text-sm text-white focus:outline-none focus:border-yellow-400">
+                        </div>
+                        <div>
+                            <label class="block text-[10px] font-bold text-zinc-400 uppercase mb-0.5">Last Name</label>
+                            <input type="text" id="reg-last" required class="w-full bg-zinc-950 border border-zinc-800 rounded px-3 py-1.5 text-sm text-white focus:outline-none focus:border-yellow-400">
+                        </div>
+                    </div>
+                    <div class="grid grid-cols-2 gap-2">
+                        <div>
+                            <label class="block text-[10px] font-bold text-zinc-400 uppercase mb-0.5">Date of Birth</label>
+                            <input type="date" id="reg-dob" required class="w-full bg-zinc-950 border border-zinc-800 rounded px-3 py-1.5 text-sm text-white focus:outline-none focus:border-yellow-400 font-mono">
+                        </div>
+                        <div>
+                            <label class="block text-[10px] font-bold text-zinc-400 uppercase mb-0.5">Age</label>
+                            <input type="number" id="reg-age" required min="10" max="100" class="w-full bg-zinc-950 border border-zinc-800 rounded px-3 py-1.5 text-sm text-white focus:outline-none focus:border-yellow-400 font-mono">
+                        </div>
+                    </div>
+                    <div>
+                        <label class="block text-[10px] font-bold text-zinc-400 uppercase mb-0.5">Gender Target</label>
+                        <select id="reg-gender" required class="w-full bg-zinc-950 border border-zinc-800 rounded px-3 py-1.5 text-sm text-white focus:outline-none focus:border-yellow-400">
+                            <option value="Male">Male</option>
+                            <option value="Female">Female</option>
+                            <option value="Other">Other</option>
+                        </select>
+                    </div>
+                    <div class="grid grid-cols-2 gap-2">
+                        <div>
+                            <label class="block text-[10px] font-bold text-zinc-400 uppercase mb-0.5">Height (cm) <span class="text-zinc-600 text-[9px] font-normal">(Optional)</span></label>
+                            <input type="number" id="reg-height" placeholder="e.g. 175" class="w-full bg-zinc-950 border border-zinc-800 rounded px-3 py-1.5 text-sm text-white focus:outline-none focus:border-yellow-400 font-mono">
+                        </div>
+                        <div>
+                            <label class="block text-[10px] font-bold text-zinc-400 uppercase mb-0.5">Weight (kg) <span class="text-zinc-600 text-[9px] font-normal">(Optional)</span></label>
+                            <input type="number" id="reg-weight" placeholder="e.g. 70" class="w-full bg-zinc-950 border border-zinc-800 rounded px-3 py-1.5 text-sm text-white focus:outline-none focus:border-yellow-400 font-mono">
+                        </div>
+                    </div>
+                    <div>
+                        <label class="block text-[10px] font-bold text-zinc-400 uppercase mb-0.5">Mobile Number (Account ID)</label>
+                        <input type="tel" id="reg-mobile" required class="w-full bg-zinc-950 border border-zinc-800 rounded px-3 py-1.5 text-sm text-white focus:outline-none focus:border-yellow-400 font-mono">
+                    </div>
+                    <div>
+                        <label class="block text-[10px] font-bold text-zinc-400 uppercase mb-0.5">Secret Word</label>
+                        <input type="text" id="reg-secret" required class="w-full bg-zinc-950 border border-zinc-800 rounded px-3 py-1.5 text-sm text-white focus:outline-none focus:border-yellow-400">
+                    </div>
+                    <button type="submit" class="w-full bg-yellow-400 hover:bg-yellow-500 text-black font-black py-2.5 rounded text-sm tracking-wide transition mt-1">SUBMIT ENROLLMENT SECURE LINK</button>
+                </form>
+                <div class="mt-3 text-center text-xs"><button onclick="switchView('member-login')" class="text-zinc-500 hover:text-white underline">Return to Sign In</button></div>
+            </div>
+
+            <div id="admin-login-section" class="hidden">
+                <h2 class="text-2xl font-black text-white mb-1">MANAGEMENT <span class="text-yellow-400">PORTAL</span></h2>
+                <p class="text-xs text-zinc-400 mb-6">Owner and system administrator security verification layout window access keys.</p>
+                <form onsubmit="handleAdminLogin(event)" class="space-y-4">
+                    <div>
+                        <label class="block text-xs font-bold text-zinc-400 uppercase tracking-wider mb-2">Staff Username</label>
+                        <input type="text" id="admin-user" required class="w-full bg-zinc-950 border border-zinc-800 rounded px-4 py-2.5 text-white focus:outline-none focus:border-yellow-400">
+                    </div>
+                    <div>
+                        <label class="block text-xs font-bold text-zinc-400 uppercase tracking-wider mb-2">Security Password</label>
+                        <input type="password" id="admin-pass" placeholder="••••••••" required class="w-full bg-zinc-950 border border-zinc-800 rounded px-4 py-2.5 text-white focus:outline-none focus:border-yellow-400">
+                    </div>
+                    <button type="submit" class="w-full bg-zinc-100 hover:bg-white text-black font-black py-3 rounded tracking-wide transition">ADMIN ACCESS</button>
+                </form>
+            </div>
+        </div>
+
+        <div id="member-dashboard" class="hidden w-full max-w-3xl bg-zinc-900 border border-zinc-800 p-8 rounded-2xl shadow-2xl">
+            <div class="flex justify-between items-center mb-6 pb-4 border-b border-zinc-800">
+                <div>
+                    <h2 class="text-3xl font-black text-white" id="m-dash-welcome">WELCOME BACK MEMBER!</h2>
+                    <p class="text-xs text-yellow-400 font-bold uppercase tracking-widest mt-1">MB GYM Verified Profile Node</p>
+                </div>
+                <button onclick="logout()" class="text-xs bg-zinc-800 px-3 py-1.5 rounded hover:bg-zinc-700 font-bold text-red-400">LOGOUT</button>
+            </div>
+            
+            <div class="grid md:grid-cols-3 gap-4">
+                <div class="bg-zinc-950 p-4 rounded-xl border border-zinc-800">
+                    <h3 class="text-xs font-bold text-zinc-500 uppercase tracking-wider mb-3">Identity Node</h3>
+                    <div class="space-y-1.5 text-xs">
+                        <p class="text-zinc-400">Account Username: <span class="text-white font-mono font-bold" id="m-dash-phone"></span></p>
+                        <p class="text-zinc-400">Date of Birth: <span class="text-white font-mono" id="m-dash-dob"></span></p>
+                        <p class="text-zinc-400">Age Bracket: <span class="text-white" id="m-dash-age"></span> yrs</p>
+                        <p class="text-zinc-400">Gender Element: <span class="text-white" id="m-dash-gender"></span></p>
+                    </div>
+                </div>
+                <div class="bg-zinc-950 p-4 rounded-xl border border-zinc-800">
+                    <h3 class="text-xs font-bold text-teal-400 uppercase tracking-wider mb-3">Biometrics Matrix</h3>
+                    <div class="space-y-1.5 text-xs">
+                        <p class="text-zinc-400">Height Parameter: <span class="text-white font-mono" id="m-dash-height"></span> cm</p>
+                        <p class="text-zinc-400">Weight Parameter: <span class="text-white font-mono" id="m-dash-weight"></span> kg</p>
+                        <p class="text-zinc-400">Calculated BMI Score: <span class="text-teal-400 font-black tracking-wider" id="m-dash-bmi"></span></p>
+                    </div>
+                </div>
+                <div class="bg-zinc-950 p-4 rounded-xl border border-zinc-800 md:col-span-1">
+                    <h3 class="text-xs font-bold text-yellow-400 uppercase tracking-wider mb-3">Subscription Framework</h3>
+                    <div class="space-y-1.5 text-xs">
+                        <p class="text-zinc-400">Tier Matrix: <span class="text-yellow-400 font-bold" id="m-dash-cat"></span></p>
+                        <p class="text-zinc-400">Plan Commenced: <span class="text-white font-mono" id="m-dash-start"></span></p>
+                        <p class="text-zinc-400">Plan Termination: <span class="text-red-400 font-mono font-bold" id="m-dash-expiry"></span></p>
+                        <p class="text-zinc-400">Personal Trainer: <span class="text-white" id="m-dash-haspt"></span> (<span class="text-white font-bold" id="m-dash-trainer"></span>)</p>
+                        <p class="text-zinc-400">Ledger Method: <span class="text-zinc-200 font-mono underline" id="m-dash-paymode"></span></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div id="admin-dashboard" class="hidden w-full max-w-7xl bg-zinc-900 border border-zinc-800 p-6 rounded-2xl shadow-2xl">
+            <div class="flex justify-between items-center mb-6 pb-4 border-b border-zinc-800">
+                <div>
+                    <h2 class="text-2xl font-black text-yellow-400">MB GYM <span class="text-white">COMMAND CENTER LAYOUT</span></h2>
+                    <p class="text-xs text-zinc-400 font-mono" id="admin-role-title">Privilege Access Mapping: Admin Root Node</p>
+                </div>
+                <button onclick="logout()" class="text-xs bg-red-950/40 border border-red-900 text-red-400 px-3 py-1.5 rounded font-bold hover:bg-red-900/60 transition">LOGOUT ADMIN PIPELINE</button>
+            </div>
+
+            <div class="grid lg:grid-cols-4 gap-6">
+                <div class="space-y-4 lg:col-span-1">
+                    <div class="bg-zinc-950 p-4 rounded-xl border border-zinc-800">
+                        <h3 class="text-xs font-black text-white uppercase tracking-wider mb-3 border-b border-zinc-800 pb-1 text-yellow-400">Enroll New Member</h3>
+                        <form onsubmit="adminAddMember(event)" class="space-y-2 text-xs">
+                            <input type="text" id="am-first" placeholder="First Name" required class="w-full bg-zinc-900 border border-zinc-800 rounded px-2.5 py-1.5 text-white">
+                            <input type="text" id="am-last" placeholder="Last Name" required class="w-full bg-zinc-900 border border-zinc-800 rounded px-2.5 py-1.5 text-white">
+                            <div class="grid grid-cols-2 gap-2">
+                                <input type="date" id="am-dob" required class="w-full bg-zinc-900 border border-zinc-800 rounded px-2 py-1.5 text-white font-mono">
+                                <input type="number" id="am-age" placeholder="Age" required min="10" max="100" class="w-full bg-zinc-900 border border-zinc-800 rounded px-2 py-1.5 text-white font-mono">
+                            </div>
+                            <select id="am-gender" required class="w-full bg-zinc-900 border border-zinc-800 rounded px-2 py-1.5 text-white">
+                                <option value="Male">Male</option>
+                                <option value="Female">Female</option>
+                                <option value="Other">Other</option>
+                            </select>
+                            <div class="grid grid-cols-2 gap-2">
+                                <input type="number" id="am-height" placeholder="Height (cm)" class="w-full bg-zinc-900 border border-zinc-800 rounded px-2 py-1.5 text-white font-mono">
+                                <input type="number" id="am-weight" placeholder="Weight (kg)" class="w-full bg-zinc-900 border border-zinc-800 rounded px-2 py-1.5 text-white font-mono">
+                            </div>
+                            <input type="tel" id="am-mobile" placeholder="Mobile Number Account ID" required class="w-full bg-zinc-900 border border-zinc-800 rounded px-2.5 py-1.5 text-white font-mono">
+                            <input type="text" id="am-secret" placeholder="Secret Assignment Word" required class="w-full bg-zinc-900 border border-zinc-800 rounded px-2.5 py-1.5 text-white">
+                            <button type="submit" class="w-full bg-yellow-400 hover:bg-yellow-500 text-black font-black py-2 rounded text-xs tracking-wide uppercase mt-1">Deploy Profile</button>
+                        </form>
+                    </div>
+
+                    <div class="bg-zinc-950 p-4 rounded-xl border border-zinc-800">
+                        <h3 class="text-xs font-black text-white uppercase tracking-wider mb-3 border-b border-zinc-800 pb-1 text-zinc-400">Deploy Staff Handle</h3>
+                        <form onsubmit="adminAddAdmin(event)" class="space-y-2 text-xs">
+                            <input type="text" id="aa-user" placeholder="Staff Username" required class="w-full bg-zinc-900 border border-zinc-800 rounded px-2.5 py-1.5 text-white">
+                            <input type="text" id="aa-pass" placeholder="System Security Password Access" required class="w-full bg-zinc-900 border border-zinc-800 rounded px-2.5 py-1.5 text-white">
+                            <select id="aa-role" class="w-full bg-zinc-900 border border-zinc-800 rounded px-2.5 py-1.5 text-white">
+                                <option value="Trainer">Trainer</option>
+                                <option value="Manager">Manager</option>
+                                <option value="Receptionist">Receptionist</option>
+                            </select>
+                            <button type="submit" class="w-full bg-zinc-200 hover:bg-white text-black font-black py-2 rounded text-xs tracking-wide uppercase mt-1">Bind Authorization</button>
+                        </form>
+                    </div>
+                </div>
+
+                <div class="lg:col-span-3 space-y-6">
+                    
+                    <div class="bg-zinc-950 p-4 rounded-xl border border-zinc-800 overflow-x-auto">
+                        <h3 class="text-base font-black text-white mb-3 tracking-wide">SYSTEM REGISTERED MEMBERS ACTIVE PIPELINES</h3>
+                        <table class="w-full text-left border-collapse text-[11px]">
+                            <thead>
+                                <tr class="border-b border-zinc-900 text-zinc-500 uppercase tracking-widest text-[10px]">
+                                    <th class="py-2 pr-2">Profile / Biometrics</th>
+                                    <th class="pr-2">Credentials Mapping</th>
+                                    <th>Operational Tier & Metrics Configuration Board</th>
+                                    <th class="text-right">Purge Actions</th>
+                                </tr>
+                            </thead>
+                            <tbody id="admin-member-table-body" class="divide-y divide-zinc-900 text-zinc-300">
+                                </tbody>
+                        </table>
+                    </div>
+
+                    <div class="bg-zinc-950 p-4 rounded-xl border border-zinc-800">
+                        <h3 class="text-base font-black text-white mb-3 tracking-wide">SECURE ADMINISTRATIVE SYSTEM ROOT REGISTER</h3>
+                        <table class="w-full text-left border-collapse text-[11px]">
+                            <thead>
+                                <tr class="border-b border-zinc-900 text-zinc-500 uppercase tracking-widest text-[10px]">
+                                    <th class="py-2">System Profile Identity Node</th>
+                                    <th>Security Operational Pass Value</th>
+                                    <th>Role Framework Access Level</th>
+                                    <th class="text-right">Purge Actions</th>
+                                </tr>
+                            </thead>
+                            <tbody id="admin-staff-table-body" class="divide-y divide-zinc-900 text-zinc-300">
+                                </tbody>
+                        </table>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+    </main>
+
+    <div id="double-check-modal" class="hidden fixed inset-0 bg-black/90 backdrop-blur-md z-50 flex items-center justify-center p-4">
+        <div class="bg-zinc-900 border border-zinc-800 max-w-sm w-full p-6 rounded-2xl text-center shadow-2xl">
+            <h4 class="text-lg font-black text-red-500 mb-1">CRITICAL DATA DELETION ALERT</h4>
+            <p class="text-xs text-zinc-400 mb-6">Are you completely certain you intend to permanently wipe profile records for <span id="dc-target-name" class="text-white font-bold underline"></span> from MB GYM local arrays?</p>
+            <div class="grid grid-cols-2 gap-3 text-xs font-bold uppercase tracking-wider">
+                <button onclick="closeDoubleCheck()" class="bg-zinc-800 hover:bg-zinc-700 text-white py-2.5 rounded-lg transition">Abort Action</button>
+                <button id="dc-confirm-btn" class="bg-red-600 hover:bg-red-700 text-white py-2.5 rounded-lg transition">Purge Record</button>
+            </div>
+        </div>
+    </div>
+
+    <footer class="p-4 border-t border-zinc-900 text-center text-[10px] text-zinc-600 tracking-wider">&copy; 2026 MB GYM. Internal control layout structures synchronized locally.</footer>
+    <script src="app.js"></script>
+</body>
+</html>

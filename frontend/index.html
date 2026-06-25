@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="en" class="bg-black text-zinc-100 font-sans antialiased scroll-behavior-smooth selection:bg-yellow-400 selection:text-black">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MB GYM | Mind & Body</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <style>
+        html { scroll-behavior: smooth; }
+    </style>
+</head>
+<body class="min-h-screen flex flex-col justify-between">
+
+    <!-- Top Navigation Header -->
+    <header class="border-b border-zinc-900 bg-black/80 backdrop-blur-md sticky top-0 z-50">
+        <div class="max-w-7xl mx-auto px-4 py-4 flex items-center justify-between">
+            <a href="index.html" class="text-xl font-black tracking-tighter text-white flex items-center gap-1.5">
+                <span class="text-yellow-400">MB</span> GYM
+            </a>
+            <nav class="flex items-center gap-6 text-xs font-bold uppercase tracking-wider">
+                <a href="#about" class="text-zinc-400 hover:text-white transition">About Us</a>
+                <a href="#plans" class="text-zinc-400 hover:text-white transition">Plans</a>
+                <a href="#contact" class="text-zinc-400 hover:text-white transition">Contact Us</a>
+                <a href="portal.html" class="bg-zinc-900 hover:bg-zinc-800 text-white border border-zinc-800 px-4 py-2 rounded-lg transition">Portal Login</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Main Content Stream -->
+    <main class="flex-grow">
+        
+        <!-- HERO SECTION WITH PREMIUM GYM MOTIVATIONAL BACKGROUND -->
+        <section class="relative min-h-[85vh] flex items-center justify-center overflow-hidden bg-black">
+            <!-- High-Quality Gym Background Image from Unsplash -->
+            <div class="absolute inset-0 z-0 bg-cover bg-center bg-no-repeat opacity-35 transform scale-100" 
+                 style="background-image: url('https://images.unsplash.com/photo-1517838277536-f5f99be501cd?q=80&w=1920&auto=format&fit=crop');">
+            </div>
+            <!-- Vignette and Dark Contrast Overlay to make text pop -->
+            <div class="absolute inset-0 z-10 bg-gradient-to-t from-black via-black/65 to-black/30"></div>
+
+            <!-- Hero Content Box -->
+            <div class="relative z-20 max-w-4xl mx-auto px-4 text-center py-28">
+                <span class="text-[10px] font-black tracking-widest text-yellow-400 uppercase border border-yellow-400/20 px-3 py-1 rounded-full bg-yellow-400/5">Premium Fitness Facility</span>
+                <h1 class="text-5xl md:text-7xl font-black text-white tracking-tight mt-6 leading-none">
+                    READY TO <br class="hidden md:inline"><span class="text-transparent bg-clip-text bg-gradient-to-r from-yellow-400 to-amber-500">TRANSFORM?</span>
+                </h1>
+                <p class="mt-4 text-zinc-300 max-w-xl mx-auto text-sm md:text-base leading-relaxed font-medium">
+                    Unlock your true potential at MB Gym (Mind & Body). State-of-the-art layout spaces tailored around exceptional strength cultivation and custom conditioning metrics.
+                </p>
+                
+                <div class="mt-8">
+                    <a href="portal.html?action=join" class="inline-block bg-yellow-400 hover:bg-yellow-500 text-black font-black px-8 py-4 rounded-xl shadow-2xl shadow-yellow-400/20 transition tracking-wide text-sm uppercase transform hover:-translate-y-0.5">
+                        Join Us
+                    </a>
+                    <!-- Prominent Hook Text Below Join Button -->
+                    <p class="text-xs text-zinc-400 font-bold tracking-widest mt-3 uppercase">Starts with 2500 only.</p>
+                </div>
+            </div>
+        </section>
+
+
+        <!-- ================= ABOUT US SECTION ================= -->
+        <section id="about" class="py-20 max-w-7xl mx-auto px-4 border-t border-zinc-900">
+            <div class="text-center mb-16">
+                <span class="text-[10px] text-yellow-400 tracking-widest uppercase font-black">Why Choose Us</span>
+                <h2 class="text-3xl font-black tracking-wider text-white uppercase mt-1">THE <span class="text-yellow-400">MB GYM</span> EXPERIENCE</h2>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Point 1: Gym Uniqueness -->
+                <div class="bg-zinc-950 border border-zinc-900 rounded-2xl p-8 transition hover:border-zinc-800">
+                    <div class="w-12 h-12 rounded-xl bg-yellow-400/10 flex items-center justify-center mb-6 border border-yellow-400/20">
+                        <span class="text-yellow-400 font-black text-lg">💎</span>
+                    </div>
+                    <h3 class="text-lg font-bold text-white uppercase tracking-tight mb-3">Our Uniqueness</h3>
+                    <p class="text-xs text-zinc-400 leading-relaxed font-medium">
+                        At MB Gym, we harmonize the connection between <span class="text-yellow-400 font-semibold">Mind & Body</span>. We don't offer generalized commercial routines; we deploy scientific bio-metric tracking systems right out of your web portal to map custom execution charts matching your physical capabilities.
+                    </p>
+                </div>
+
+                <!-- Point 2: Environment -->
+                <div class="bg-zinc-950 border border-zinc-900 rounded-2xl p-8 transition hover:border-zinc-800">
+                    <div class="w-12 h-12 rounded-xl bg-yellow-400/10 flex items-center justify-center mb-6 border border-yellow-400/20">
+                        <span class="text-yellow-400 font-black text-lg">⚡</span>
+                    </div>
+                    <h3 class="text-lg font-bold text-white uppercase tracking-tight mb-3">Elite Environment</h3>
+                    <p class="text-xs text-zinc-400 leading-relaxed font-medium">
+                        Train inside a focused, premium, and motivational atmosphere built with high-end, zero-compromise equipment layouts. Maintained to pristine hygienic standards, our floor features zero distractions, dynamic acoustics, and an absolute commitment to hardcore training milestones.
+                    </p>
+                </div>
+
+                <!-- Point 3: High Quality Trainers -->
+                <div class="bg-zinc-950 border border-zinc-900 rounded-2xl p-8 transition hover:border-zinc-800">
+                    <div class="w-12 h-12 rounded-xl bg-yellow-400/10 flex items-center justify-center mb-6 border border-yellow-400/20">
+                        <span class="text-yellow-400 font-black text-lg">🏋️‍♂️</span>
+                    </div>
+                    <h3 class="text-lg font-bold text-white uppercase tracking-tight mb-3">High Quality Trainers</h3>
+                    <p class="text-xs text-zinc-400 leading-relaxed font-medium">
+                        Accelerate your physical transformations under certified personal trainers. Our highly qualified fitness professionals design progressive overload tracking systems, real-time posture adjustments, and goal-focused nutrition profiles to guarantee raw, quantifiable results.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+
+        <!-- ================= PLANS SECTION ================= -->
+        <section id="plans" class="py-20 max-w-7xl mx-auto px-4 border-t border-zinc-900 bg-black">
+            <div class="text-center mb-12">
+                <span class="text-[10px] text-zinc-500 uppercase tracking-widest font-black">Pricing Options</span>
+                <h2 class="text-3xl font-black tracking-wider text-yellow-400 uppercase mt-1">MEMBERSHIP <span class="text-white">PLANS</span></h2>
+            </div>
+
+            <!-- 4-Column Responsive Grid Layout -->
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+                
+                <!-- Monthly Plan Card -->
+                <div class="bg-zinc-950 border border-zinc-900 rounded-2xl p-6 flex flex-col justify-between shadow-2xl transition hover:border-yellow-400/40 group">
+                    <div>
+                        <span class="text-[10px] text-zinc-500 uppercase tracking-widest font-black block mb-1">Standard Entry</span>
+                        <h3 class="text-lg font-black text-white group-hover:text-yellow-400 transition">Monthly Membership</h3>
+                        <div class="my-4">
+                            <span class="text-4xl font-black text-white">₹2,500</span>
+                            <span class="text-xs text-zinc-500 font-mono">/ Month</span>
+                        </div>
+                        <ul class="text-xs text-zinc-400 space-y-2.5 my-6 border-t border-zinc-900 pt-4 font-medium">
+                            <li class="flex items-center gap-2"><span class="text-yellow-400">•</span> General gym floor access</li>
+                            <li class="flex items-center gap-2"><span class="text-yellow-400">•</span> Cardio & free weights zone</li>
+                            <li class="flex items-center gap-2"><span class="text-yellow-400">•</span> Locker room amenities</li>
+                        </ul>
+                    </div>
+                    <a href="portal.html?action=join" class="w-full text-center bg-zinc-900 hover:bg-yellow-400 hover:text-black text-white font-bold py-3 rounded-xl text-xs tracking-wider uppercase transition border border-zinc-800/60 group-hover:border-transparent">Join Us</a>
+                </div>
+
+                <!-- 3-Month Plan Card -->
+                <div class="bg-zinc-950 border border-zinc-900 rounded-2xl p-6 flex flex-col justify-between shadow-2xl transition hover:border-yellow-400/40 group">
+                    <div>
+                        <span class="text-[10px] text-zinc-500 uppercase tracking-widest font-black block mb-1">Commitment Builder</span>
+                        <h3 class="text-lg font-black text-white group-hover:text-yellow-400 transition">3 Monthly Package</h3>
+                        <div class="my-4">
+                            <span class="text-4xl font-black text-white">₹5,000</span>
+                            <span class="text-xs text-zinc-500 font-mono">/ 3 Regular Mos</span>
+                        </div>
+                        <ul class="text-xs text-zinc-400 space-y-2.5 my-6 border-t border-zinc-900 pt-4 font-medium">
+                            <li class="flex items-center gap-2"><span class="text-yellow-400">•</span> All Monthly tier features</li>
+                            <li class="flex items-center gap-2"><span class="text-yellow-400">•</span> Posture & flexibility analysis</li>
+                            <li class="flex items-center gap-2"><span class="text-yellow-400">•</span> Group training availability</li>
+                        </ul>
+                    </div>
+                    <a href="portal.html?action=join" class="w-full text-center bg-zinc-900 hover:bg-yellow-400 hover:text-black text-white font-bold py-3 rounded-xl text-xs tracking-wider uppercase transition border border-zinc-800/60 group-hover:border-transparent">Join Us</a>
+                </div>
+
+                <!-- 6-Month Plan Card -->
+                <div class="bg-zinc-950 border border-zinc-900 rounded-2xl p-6 flex flex-col justify-between shadow-2xl transition hover:border-yellow-400/40 group relative overflow-hidden">
+                    <div class="absolute top-0 right-0 bg-yellow-400 text-black font-black text-[9px] px-3 py-0.5 uppercase tracking-widest rounded-bl-xl">Popular</div>
+                    <div>
+                        <span class="text-[10px] text-yellow-400 uppercase tracking-widest font-black block mb-1">Performance Drive</span>
+                        <h3 class="text-lg font-black text-white group-hover:text-yellow-400 transition">6 Monthly Package</h3>
+                        <div class="my-4">
+                            <span class="text-4xl font-black text-white">₹8,000</span>
+                            <span class="text-xs text-zinc-500 font-mono">/ 6 Mos</span>
+                        </div>
+                        <ul class="text-xs text-zinc-400 space-y-2.5 my-6 border-t border-zinc-900 pt-4 font-medium">
+                            <li class="flex items-center gap-2"><span class="text-yellow-400">•</span> All 3-Month tier features</li>
+                            <li class="flex items-center gap-2"><span class="text-yellow-400">•</span> Custom workout chart mapping</li>
+                            <li class="flex items-center gap-2"><span class="text-yellow-400">•</span> 2 Free guest floor passes</li>
+                        </ul>
+                    </div>
+                    <a href="portal.html?action=join" class="w-full text-center bg-yellow-400 text-black font-black py-3 rounded-xl text-xs tracking-wider uppercase transition hover:bg-yellow-500 shadow-md shadow-yellow-400/5">Join Us</a>
+                </div>
+
+                <!-- Yearly Plan Card -->
+                <div class="bg-zinc-950 border border-zinc-900 rounded-2xl p-6 flex flex-col justify-between shadow-2xl transition hover:border-yellow-400/40 group">
+                    <div>
+                        <span class="text-[10px] text-zinc-500 uppercase tracking-widest font-black block mb-1">Elite Lifestyle</span>
+                        <h3 class="text-lg font-black text-white group-hover:text-yellow-400 transition">YEARLY Membership</h3>
+                        <div class="my-4">
+                            <span class="text-4xl font-black text-white">₹12,000</span>
+                            <span class="text-xs text-zinc-500 font-mono">/ Year</span>
+                        </div>
+                        <ul class="text-xs text-zinc-400 space-y-2.5 my-6 border-t border-zinc-900 pt-4 font-medium">
+                            <li class="flex items-center gap-2"><span class="text-yellow-400">•</span> Absolute VIP facility access</li>
+                            <li class="flex items-center gap-2"><span class="text-yellow-400">•</span> Priority PT scheduling option</li>
+                            <li class="flex items-center gap-2"><span class="text-yellow-400">•</span> Full locker & custom diet profiles</li>
+                        </ul>
+                    </div>
+                    <a href="portal.html?action=join" class="w-full text-center bg-zinc-900 hover:bg-yellow-400 hover:text-black text-white font-bold py-3 rounded-xl text-xs tracking-wider uppercase transition border border-zinc-800/60 group-hover:border-transparent">Join Us</a>
+                </div>
+
+            </div>
+        </section>
+
+
+        <!-- ================= CONTACT US SECTION ================= -->
+        <section id="contact" class="py-20 max-w-7xl mx-auto px-4 border-t border-zinc-900">
+            <div class="text-center mb-12">
+                <span class="text-[10px] text-zinc-500 uppercase tracking-widest font-black">Get In Touch</span>
+                <h2 class="text-3xl font-black tracking-wider text-white uppercase mt-1">CONTACT <span class="text-yellow-400">OUR OFFICE</span></h2>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-12 bg-zinc-950 p-8 rounded-3xl border border-zinc-900 max-w-5xl mx-auto">
+                <!-- Info Grid Block -->
+                <div class="space-y-6 flex flex-col justify-center">
+                    <div>
+                        <h3 class="text-lg font-bold text-white uppercase tracking-tight mb-2">Connect Directly</h3>
+                        <p class="text-xs text-zinc-400 leading-relaxed">
+                            Have general inquiries about trainer booking availabilities, corporate programs, or systemic data access? Stop by or ping us anytime.
+                        </p>
+                    </div>
+                    <div class="space-y-3 font-mono text-xs text-zinc-300">
+                        <div class="flex items-center gap-3">
+                            <span class="text-yellow-400 font-sans">📍</span> <span>254 abulane Abu plaza ,E-232 behind rajmahal hotel , Meerut Cantt Uttar Pradesh.</span>
+                        </div>
+                        <div class="flex items-center gap-3">
+                            <span class="text-yellow-400 font-sans">📞</span> <span>+91 98765 43210</span>
+                        </div>
+                        <div class="flex items-center gap-3">
+                            <span class="text-yellow-400 font-sans">✉️</span> <span>support@mbgym.com</span>
+                        </div>
+                        <div class="flex items-center gap-3">
+                            <span class="text-yellow-400 font-sans">🕒</span> <span>Mon - Sat: 5:00 AM - 10:00 AM  &  5:00 PM - 10:00 PM | Sun RECOVERY.</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Contact Interaction Form -->
+                <form onsubmit="event.preventDefault(); alert('Message successfully logged! Our administration team will follow up shortly.'); this.reset();" class="space-y-4">
+                    <div>
+                        <label class="block text-[10px] uppercase tracking-wider text-zinc-400 font-bold mb-1">Your Name</label>
+                        <input type="text" required placeholder="John Doe" class="w-full bg-black border border-zinc-800 rounded-xl px-4 py-3 text-xs text-white focus:outline-none focus:border-yellow-400 font-medium transition">
+                    </div>
+                    <div>
+                        <label class="block text-[10px] uppercase tracking-wider text-zinc-400 font-bold mb-1">Contact Phone</label>
+                        <input type="tel" required placeholder="+91 XXXXX XXXXX" class="w-full bg-black border border-zinc-800 rounded-xl px-4 py-3 text-xs text-white focus:outline-none focus:border-yellow-400 font-mono transition">
+                    </div>
+                    <div>
+                        <label class="block text-[10px] uppercase tracking-wider text-zinc-400 font-bold mb-1">Message Detail</label>
+                        <textarea rows="3" required placeholder="Describe your query..." class="w-full bg-black border border-zinc-800 rounded-xl px-4 py-3 text-xs text-white focus:outline-none focus:border-yellow-400 font-medium transition resize-none"></textarea>
+                    </div>
+                    <button type="submit" class="w-full bg-zinc-900 hover:bg-yellow-400 hover:text-black border border-zinc-800 text-white font-bold py-3 rounded-xl text-xs tracking-wider uppercase transition">Send Message</button>
+                </form>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Footer Area -->
+    <footer class="border-t border-zinc-900 py-6 bg-zinc-950/40">
+        <div class="max-w-7xl mx-auto px-4 text-center text-xs text-zinc-600 font-mono">
+            &copy; 2026 MB GYM Management Portal System Enterprise. All rights reserved.
+        </div>
+    </footer>
+
+</body>
+</html>
